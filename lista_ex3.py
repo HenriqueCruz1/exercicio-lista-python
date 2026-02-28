@@ -6,7 +6,7 @@ numeros = []
 
 for c in range (5):
     numero = int(input('Digite um numero. '))
-    if not numeros:
-        numeros.append(numero)
+    numeros.append(numero)
 
+print (numeros)
 
