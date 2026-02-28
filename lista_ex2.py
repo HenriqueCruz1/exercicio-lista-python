@@ -1,18 +1,21 @@
+# 1 -  Faça um programa que leia 5 valores numéricos e guarde em uma lista.
+# No final, mostre qual foi o maior e o menor valor digitado e as suas respectivas posições na lista.
+
 numeros = []
 
-while True:
-    numero = int(input('Digite um número. '))
-    if numero not in numeros:
-        numeros.append(numero)
+for c in range (5):
+    numero = (int(input('Digite um número. ')))
+    numeros.append(numero)
+    maior = numeros[1]
+    if numero > maior:
+        maior = numero
+    menor = numeros[1]
+    if numero < menor:
+        menor = numero
         
-    else:
-        print('Esse número já está na lista e não será adicionado')
-
-    pergunta = input('Quer continuar [S/N]').upper()
-    if pergunta != 'S':
-        break
-
-print (numeros.sort())
+print (numeros)
+print (maior)
+print (menor)
 
 
         
