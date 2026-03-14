@@ -1,21 +1,31 @@
-# 1 -  Faça um programa que leia 5 valores numéricos e guarde em uma lista.
-# No final, mostre qual foi o maior e o menor valor digitado e as suas respectivas posições na lista.
+#Crie um programa onde o usuário possa digitar vários valores numéricos e cadastre-os em uma lista. 
+#Caso o número já esteja lá dentro, ele não será adicionado. 
+#No final, serão exibidos todos os valores únicos digitados, em ordem crescente.
 
 numeros = []
 
-for c in range (5):
-    numero = (int(input('Digite um número. ')))
-    numeros.append(numero)
-    maior = numeros[1]
-    if numero > maior:
-        maior = numero
-    menor = numeros[1]
-    if numero < menor:
-        menor = numero
-        
-print (numeros)
-print (maior)
-print (menor)
+while True:
+    
+    numero = int(input('Digite um número.'))
+    
+    if numero not in numeros:
+        numeros.append(numero)
+    else:
+        print('Esse número já existe na lista e não será adicionado')
+
+    pergunta = input('Deseja continuar ? [S/N]').upper()
+
+    while pergunta not in 'SN': #filtro de resposta se corresponde ao solicitado.
+        pergunta = input('Resposta invalida. Digite S ou N ').upper()
+
+    if pergunta == 'N': #condição para aplicar o break do loop.
+        break
+
+numeros.sort()
+print(f'Os números cadastrados com sucesso foram {numeros}')
+    
+
+    
 
 
         
